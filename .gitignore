@@ -1,1 +1,8 @@
-node_modules
+# Ignore tous les dossiers node_modules du projet
+node_modules/
+
+# Ignore les fichiers de debug npm
+npm-debug.log
+
+# Ignore les fichiers d'environnement (si vous en créez plus tard)
+.env

@@ -1,0 +1,22 @@
+services:
+  # Notre API Hello
+  hello-api:
+    build: ./hello-api
+    container_name: hello-api
+    networks:
+      - mcp-network
+    # Pas forcément besoin d'exposer le port 3000 sur l'hôte 
+    # car le serveur MCP lui parlera via le réseau Docker
+
+  # Notre futur serveur MCP (on préparera le dossier juste après)
+  mcp-server:
+    build: ./mcp-server
+    container_name: mcp-server
+    depends_on:
+      - hello-api
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
