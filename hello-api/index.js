@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ||3000;
 
 // Middleware pour permettre à Express de lire le JSON dans les corps de requêtes (PUT)
 app.use(express.json());
